@@ -105,6 +105,13 @@ function ESX.ShowFloatingHelpNotification(msg, coords)
     EndTextCommandDisplayHelp(2, false, false, -1)
 end
 
+function ESX.DrawMissionText(msg, time)
+    ClearPrints()
+    BeginTextCommandPrint('STRING')
+    AddTextComponentSubstringPlayerName(msg)
+    EndTextCommandPrint(time, true)
+end
+
 function ESX.HashString(str)
     return ('~INPUT_%s~'):format(('%x'):format(joaat(str)):upper())
 end
